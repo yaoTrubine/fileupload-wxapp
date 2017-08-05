@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Document
+    link(rel="stylesheet", href="https://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css")
+    script(src="https://cdn.bootcss.com/angular.js/1.3.14/angular.min.js")
+    script(src="js/fileApp.js")
+body(ng-app="fileApp")
+    .container(ng-controller="mainController")
+    form(action="")
+        .form-group
+            larbel
+                input(
+                    type='text'
+                    class='form-control'
+                )
+        .form-group
+            larbel
+                input(
+                    type='file'
+                    class='form-control'
+                )
