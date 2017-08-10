@@ -1,0 +1,6 @@
+ul,li{list-style: none;}
+nav{text-align: center;}
+nav li{cursor: pointer;}
+#post img{width: 200px;height: 200px;}
+#post dt{padding: 10px 0;}
+.jumbotron{padding: 10px;}

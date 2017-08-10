@@ -2,7 +2,8 @@ var express = require('express'),
 	path = require('path'),
 	routes = require('./routes'),
 	mongoose =require('mongoose'),
-	app = express();
+	app = express(),
+	admin = express();
 	mongoose.connect('mongodb://localhost/wxapp');
 
 app.use(function(req, res, next) { //allow cross origin requests
@@ -12,11 +13,18 @@ app.use(function(req, res, next) { //allow cross origin requests
     next();
 });
 
+
+
 app.set('views', path.join(__dirname, '/angular'));
 app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, '/public')));
 
 
+app.get('/admin', function(req, res){
+	res.render('admin/index');
+});
+
+app.use('/admin',admin);
 routes(app);
 app.listen(3000, function(){
 	console.log('Listening at 3000');
