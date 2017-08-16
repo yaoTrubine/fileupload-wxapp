@@ -16,9 +16,8 @@ app.use(function(req, res, next) { //allow cross origin requests
 
 
 app.set('views', path.join(__dirname, '/angular'));
-app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, '/public')));
-
+app.use(express.static(path.join(__dirname, '/angular')));
 
 app.get('/admin', function(req, res){
 	res.render('admin/index');
