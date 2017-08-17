@@ -1,4 +1,4 @@
-var app = angular.module('fileApp',['ngRoute']);
+var app = angular.module('fileApp',['ngRoute','angularTrix']);
 app.config(function($routeProvider){
     $routeProvider
         .when('/products',{

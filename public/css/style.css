@@ -1,2 +1,4 @@
 body{padding-top: 70px;}
 textarea{resize: none;}
+#editor{overflow:scroll; max-height:300px}
+trix-editor{height: 180px;}

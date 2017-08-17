@@ -2,8 +2,7 @@ var router = require('express').Router(),
 		fs = require('fs'),
 		multer = require('multer'),
 		upload = multer({dest : './uploads/'}),
-		mongoose = require('mongoose'),
-		Company = mongoose.model('Company',require('../models/companys'));
+		mongoose = require('mongoose');
 
 
 router.route('/')
