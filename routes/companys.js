@@ -17,7 +17,7 @@ router.route('/create')
 			req.files.forEach(function(file){
 				var filename = file.originalname;	
 				console.log(filename);
-				fs.rename(file.path, './public/images/' + filename, function(err){
+				fs.rename(file.path, 'public/images/' + filename, function(err){
 					if(err) throw err;
 					var newCompany = new Company({
 						_id : req.body._id,

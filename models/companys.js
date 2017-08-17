@@ -16,5 +16,5 @@ var productSchema = new Schema({
   images : Array
 });
 
-mongoose.model('Product', companySchema);
-mongoose.model('Company', productSchema);
+mongoose.model('Company', companySchema);
+mongoose.model('Product', productSchema);
