@@ -1,8 +1,9 @@
 var router = require('express').Router(),
-		fs = require('fs'),
-		multer = require('multer'),
-		upload = multer({dest : './uploads/'}),
-		mongoose = require('mongoose');
+	fs = require('fs'),
+	multer = require('multer'),
+	upload = multer({dest : './uploads/'}),
+	mongoose = require('mongoose'),
+	Company = mongoose.model('Company');
 
 
 router.route('/')
@@ -11,29 +12,28 @@ router.route('/')
 	  });
 
 router.route('/create')
-	  .post(upload.array('images'),function(req, res){
-			// console.log(req.files);
-			var filename = [];
-			for(var i=0;i<req.files.length;i++){
-				filename.push(req.files[i].originalname);
-			}
+	  .post(upload.any(),function(req, res, next){
+		  	
 			req.files.forEach(function(file){
-				fs.rename(file.path, 'public/images/' + file.originalname, function(err){
+				var filename = file.originalname;	
+				console.log(filename);
+				fs.rename(file.path, './public/images/' + filename, function(err){
 					if(err) throw err;
-					
-				})
-			});
-
-			var newCompany = new Company({
+					var newCompany = new Company({
+						_id : req.body._id,
 						title : req.body.title,
 						description : req.body.description,
 						images : filename
 					});
 
-			newCompany.save(function(err,data){
-					if(err) throw err;
-					res.json(data);
-				});
+					newCompany.save(function(err,data){
+						if(err) throw err;
+						res.json(data);
+					});
+				})
+			});
+
+			
 	  });
 
 router.route('/:id')

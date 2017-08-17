@@ -11,8 +11,10 @@ var companySchema = new Schema({
 
 var productSchema = new Schema({
   _creator : {type: Number, ref: 'Company'},
+  title : String,
   description : String,
+  images : Array
 });
 
-var Product = mongoose.model('Product', companySchema);
-var Company = mongoose.model('Company', productSchema);
+mongoose.model('Product', companySchema);
+mongoose.model('Company', productSchema);

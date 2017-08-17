@@ -1,11 +1,18 @@
+<!--上传公司-->
 <div class="container" ng-controller="companyController">
+  <h1>上传公司</h1>
   <form ng-submit="submit()" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="">公司编号</label>
+      <input type="text" class="form-control" ng-model="company._id">
+    </div>
     <div class="form-group">
       <label for="">公司标题</label>
       <input type="text" class="form-control" ng-model="company.title">
     </div>
     <div class="form-group">
       <label for="">公司照片</label>
+      <!--单文件-->
       <input type="file" class="form-control" id="company-file" multiple="multiple" ng-model="company.file">
     </div>
     <div class="form-group">

@@ -1,0 +1,22 @@
+<div class="container" ng-controller="mainController">
+    <form ng-submit="submit()">
+        <div class="form-group">
+            <label for="productName">产品名称</label>
+            <select name="name" id="productName" class="form-control" ng-model="product.name">
+                <option>筒灯</option>
+                <option>餐厅灯</option>
+                <option>主灯</option>
+                <option>过道灯</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="file">上传图片</label>
+            <input type="file" class="form-control" id="file" ng-model="product.file">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary form-control">上传</button>
+        </div>
+    </form>
+    <p>{{item.name}}</p>
+    <img ng-src="http://localhost:3000/images/{{item.image}}" alt="">
+</div>

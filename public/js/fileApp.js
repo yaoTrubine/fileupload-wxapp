@@ -19,48 +19,49 @@ app.config(function($routeProvider){
         });
 });
 
+// 上传公司产品
 app.controller('mainController', function($scope,$http){
     $scope.submit = function(){
         var formData = new FormData();
         for(key in $scope.product){
-            // console.log($scope.product[key]);
+            console.log($scope.product[key]);
             formData.append(key,$scope.product[key]);
         }
         var file = $('#file')[0].files[0];
         formData.append('image',file);
-        $http.post('/posts',formData,{
-            tranformRequest : angular.identity,
-			headers:{
-				'Content-Type': undefined
-			}
-        })
-             .then(function(res){
-                $scope.item = res.data;
-             },function errorCallback(err){
-                console.log(err);
-             });        
+        // $http.post('/posts',formData,{
+        //     tranformRequest : angular.identity,
+		// 	headers:{
+		// 		'Content-Type': undefined
+		// 	}
+        // })
+        //      .then(function(res){
+        //         $scope.item = res.data;
+        //      },function errorCallback(err){
+        //         console.log(err);
+        //      });        
     }
 });
 
+//上传公司
 app.controller('companyController', function($scope,$http){
     $scope.submit = function(){
         var formData = new FormData();
         for(key in $scope.company){
+            console.log($scope.company[key]);
             formData.append(key, $scope.company[key]);
         }
-        var file = $('#company-file')[0].files;
+        var file = $('#company-file')[0].files[0];
         // console.log(file);
-        for(var i=0;i<file.length;i++){
-            formData.append('images',file[i]);
-        }
+        formData.append('images',file);
         $http.post('/companys/create',formData,{
             tranformRequest : angular.identity,
             headers: {
                 'Content-Type': undefined
             }
         })
-            .then(function(res){
+        .then(function(res){
 
-            })
+        })
     }
 })
