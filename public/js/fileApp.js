@@ -27,21 +27,27 @@ app.controller('mainController', function($scope,$http){
             console.log($scope.product[key]);
             formData.append(key,$scope.product[key]);
         }
-        var file = $('#file')[0].files[0];
-        formData.append('image',file);
-        // $http.post('/posts',formData,{
-        //     tranformRequest : angular.identity,
-		// 	headers:{
-		// 		'Content-Type': undefined
-		// 	}
-        // })
-        //      .then(function(res){
-        //         $scope.item = res.data;
-        //      },function errorCallback(err){
-        //         console.log(err);
-        //      });        
+        var file = $('#product-file')[0].files;
+        for (var i = 0; i < file.length; i++) {
+            console.log(file[i]);            
+            formData.append('images',file);
+        }
+        $http.post('/products/create',formData,{
+            tranformRequest : angular.identity,
+			headers:{
+				'Content-Type': undefined
+			}
+        })
+             .then(function(res){
+                 
+             },function errorCallback(err){
+                console.log(err);
+             });        
     }
 });
+
+
+
 
 //上传公司
 app.controller('companyController', function($scope,$http){

@@ -2,8 +2,7 @@ var express = require('express'),
 	path = require('path'),
 	routes = require('./routes'),
 	mongoose =require('mongoose'),
-	app = express(),
-	admin = express();
+	app = express();
 	mongoose.connect('mongodb://localhost/wxapp'),
 	require('./models/companys');
 
@@ -20,12 +19,8 @@ app.set('views', path.join(__dirname, '/angular'));
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.static(path.join(__dirname, '/angular')));
 
-app.get('/admin', function(req, res){
-	res.render('admin/index');
-});
-
-app.use('/admin',admin);
 routes(app);
+
 app.listen(3000, function(){
 	console.log('Listening at 3000');
 });
