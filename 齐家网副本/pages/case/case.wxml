@@ -1,0 +1,15 @@
+<import src='../../components/good/good.wxml'/>
+<view class="casetitle">
+  <text>XXX灯饰材料</text>
+</view>
+
+ <block  wx:for="{{goods}}" wx:for-item='good'>
+    <!-- <template is="good" data="{{good:good}}"/> -->
+    <view class="good" bindtap="goodDetail" data-id="{{good.content}}">
+      <view class='title'>
+			<text>{{good.content}}</text>
+		</view>
+		<image src="{{good.url}}" mode="aspectFill"></image>
+     </view>
+</block>
+  

@@ -1,0 +1,7 @@
+ <import src="../../components/lamplist/lamplist.wxml"/> 
+
+<view class="flex-wrp clearfix">
+<block  wx:for="{{images}}" wx:for-item="value" wx:key="*this">
+   <template is="lamplist" data="{{value:value}}"></template> 
+</block>
+</view>

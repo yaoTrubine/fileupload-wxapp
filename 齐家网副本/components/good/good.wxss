@@ -1,0 +1,17 @@
+.good {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 0.1px solid	#F0F0F0;
+  padding: 10px 0 10px 10px;
+  align-items: center;
+}
+
+.title text{font-size: 16px;padding-left: 50rpx;}
+.good image {
+  width: 200rpx;
+  height: 150rpx;
+  vertical-align: bottom;
+}
+

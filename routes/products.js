@@ -50,10 +50,10 @@ router.route('/:_creator')
               if(err) throw err;
               res.json(data);
           })
-      })
-router.route('/:id')
+      });
+router.route('/:_creator/:id')
       .get(function(req, res){
-          Product.findById({'_id':req.params.id},function(err, data){
+          Product.find({'_creator':req.params._creator,'_id':req.params.id},function(err, data){
               if(err) throw err;
               res.json(data);
           })

@@ -1,0 +1,8 @@
+<view class="title">
+  <text>{{product.title}}</text>
+</view>
+
+<view class="description">
+  <text>{{product.description}}</text>
+</view>
+

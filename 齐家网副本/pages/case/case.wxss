@@ -1,0 +1,27 @@
+page{
+}
+
+.good{
+  position: relative;
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
+}
+
+.casetitle{
+  padding: 50rpx 0 50rpx 30rpx;
+  border-bottom: 2px solid #E6E6E6;
+  margin-bottom: 40rpx;
+}
+
+.good .title{
+  position: absolute;
+  left: 250rpx;
+  width: 70%;
+  float: right;
+  vertical-align: middle;
+  line-height: 150rpx;
+}
+image{
+  width: 30%;
+  height: 150rpx;
+}

@@ -1,0 +1,62 @@
+<import src="../../components/storeitem/storeitem.wxml"/>
+<view class="form">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+<view class="section">
+    <input name="input" placeholder="你的名字" />
+  </view>
+  <view class="section">
+    <input name="input" placeholder="输入手机号码" />
+  </view>
+  <view class="section">
+    <input name="input" placeholder="所在区域" />
+  </view>
+  <view class="btn-area">
+    <button formType="submit">获得推荐<i>(1-3家本地口碑公司)</i></button>
+    <text>*严审品牌资质, 只推荐业主好评的装修公司</text>
+  </view>
+
+</form>
+</view>
+
+
+<view class="sort">
+  <view class="flex-wrp">
+    <picker mode="selector" range="{{city}}">
+      <view class="picker">
+      <image src="../../images/position.png" mode="aspectFill" class='icon'></image>
+      {{city}}
+    </view>
+  </picker>
+  <picker mode="selector" value="{{index}}" range="{{sort}}" bindchange="bindPickerChange">
+    <view class="picker">
+    <image src="../../images/arrow_down.png" mode="aspectFill" class='icon'></image>
+        {{sort[index]}}
+    </view>
+  </picker>
+  </view>
+</view>
+
+<view class="store_rate">
+  <view class="flex-wrp">
+    <block  wx:for="{{goods}}" wx:for-item='good' wx:key="*this" wx:for-index="key">
+      <view class='store' bindtap='storelick' data-id="{{good.id}}">
+          <view class='info'>
+            <view class='name'>{{good.name}}</view>
+           
+            <view class='type_km'>
+              <view class='type'>口碑值:{{good.word}}</view><!--口碑-->
+              <view class='rate'>好评率:{{good.praise}}%</view>
+              <view class='km'>{{good.km}}km</view>
+            </view>
+          </view>
+        </view>
+    </block>
+  </view>
+</view>
+
+<!--
+  <block wx:for="{{items}}">
+  <label><checkbox />{{item.title}}</label>
+</block>
+
+<button bindtap="chng">变更项</button>-->
