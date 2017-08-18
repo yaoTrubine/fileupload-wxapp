@@ -3,36 +3,67 @@ var router = require('express').Router(),
     fs = require('fs'),
     multer = require('multer'),
     upload = multer({dest : './uploads/'}),
-    Product = mongoose.model('Product');
+    Product = mongoose.model('Product'),
+    Company = mongoose.model('Company');
 
 
 router.route('/')
       .get(function(req, res){
-            res.send({message:'hello'});
-          });
+        //   Product.findOne({title: 'asd'}).populate('_creator').exec(function(err, result){
+        //     res.send(result._creator.title);
+        //   })
+        });
 
+// 创建商品
 router.route('/create')
       .get(function(req, res){
-          res.send({message:'hello'});
+          res.send({message:'rua'});
       })
-      .post(upload.any(),function(req, res, next){
-         console.log(req.body);
-         console.log(req.files);
+      .post(upload.array('images'),function(req, res, next){
+        //  console.log(req.body);
+        var filename = [];
+        for (var i = 0; i < req.files.length; i++) {
+            filename.push(req.files[i].originalname);
+        }
+        // console.log(filename);
+         req.files.forEach(function(file){
+             fs.rename(file.path, 'public/images/products/'+file.originalname,function(err){
+                 if(err) throw err;
+             })
+         });
+         var newProduct = new Product({
+            _creator : req.body._creator,
+            title : req.body.title,
+            description : req.body.description,
+            images : filename
+        });
+        newProduct.save(function(err, data){
+            if(err) throw err;
+            res.json(data);
+        });
       });
 
-router.route('/:name')
+//单个商品查找
+router.route('/:_creator')
       .get(function(req, res){
-          Post.find({'name':req.params.name},[],function(err, data){
+          Product.find({'_creator':req.params._creator},function(err,data){
               if(err) throw err;
               res.json(data);
-              
+          })
+      })
+router.route('/:id')
+      .get(function(req, res){
+          Product.findById({'_id':req.params.id},function(err, data){
+              if(err) throw err;
+              res.json(data);
           })
       })
       .delete(function(req, res){
-          Post.findByIdAndRemove(req.params.name,function(err){
+          Product.findByIdAndRemove(req.params.name,function(err){
               if(err) throw err;
           })
       });
+
 
 
 module.exports = router;

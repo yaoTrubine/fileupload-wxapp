@@ -29,8 +29,7 @@ app.controller('mainController', function($scope,$http){
         }
         var file = $('#product-file')[0].files;
         for (var i = 0; i < file.length; i++) {
-            console.log(file[i]);            
-            formData.append('images',file);
+            formData.append('images',file[i]);
         }
         $http.post('/products/create',formData,{
             tranformRequest : angular.identity,

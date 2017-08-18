@@ -8,7 +8,9 @@ var router = require('express').Router(),
 
 router.route('/')
 	  .get(function(req, res){
-		  res.send({message: 'company'});
+			Company.find().exec(function(err,result){
+				res.json(result);
+			});
 	  });
 
 router.route('/create')
@@ -16,7 +18,7 @@ router.route('/create')
 		  	
 			req.files.forEach(function(file){
 				var filename = file.originalname;	
-				console.log(filename);
+				// console.log(filename);
 				fs.rename(file.path, 'public/images/' + filename, function(err){
 					if(err) throw err;
 					var newCompany = new Company({
@@ -38,7 +40,14 @@ router.route('/create')
 
 router.route('/:id')
 	  .get(function(req, res){
-		  res.send(req.params.id);
+			Company.findById({'_id':req.params.id}, function(err, result){
+				if(err) throw err;
+				res.json(result);
+			})
+			// Company.findById({'_id':req.params.id}).populate('products').exec(function(err, result){
+			// 	if(err) throw err;
+			// 	res.send(result);
+			// })
 	  });
 
 
