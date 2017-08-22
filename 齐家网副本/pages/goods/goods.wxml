@@ -15,7 +15,7 @@
   <block  wx:for="{{products}}" wx:for-item='product' wx:key='*this'>
     <!-- <template is="good" data="{{good:good}}"/> -->
     <view class='product' bindtap='productDetail' data-id="{{product._id}}">
-      <image src="http://localhost:8888/images/products/{{product.images[0]}}" mode="aspectFit"></image>
+      <image src="https://qzw.flhome.cn/images/products/{{product.images[0]}}" mode="aspectFit"></image>
       <view class='title'>
         <text>{{product.title}}</text>
       </view>

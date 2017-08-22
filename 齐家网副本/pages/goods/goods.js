@@ -17,21 +17,21 @@ Page({
       });
       //输出公司数据
       wx.request({
-        url: 'http://localhost:8888/companys/'+options.id,
+        url: 'https://qzw.flhome.cn/companys/'+options.id,
         header: {
           'content-type': 'application/json'
         },
         success : function(res){
           that.setData({
             'company': res.data,
-            image: 'http://localhost:8888/images/'+res.data.images,
+            image: 'https://qzw.flhome.cn/images/'+res.data.images,
             nodes : res.data.description
           })
         }
       });
       //获得公司下的产品
       wx.request({
-        url: 'http://localhost:8888/products/'+options.id,
+        url: 'https://qzw.flhome.cn/products/'+options.id,
         header: {
           'content-type': 'application/json'
         },

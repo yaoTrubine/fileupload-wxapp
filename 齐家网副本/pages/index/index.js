@@ -38,7 +38,7 @@ Page({
     var that = this;
     var data = [];
     wx.request({
-      url: 'http://localhost:8888/companys',
+      url: 'https://qzw.flhome.cn/companys',
       
       header: {
         'content-type': 'application/json'

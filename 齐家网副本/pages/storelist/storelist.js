@@ -14,7 +14,7 @@ Page({
     var that = this;
     console.log(options);
     wx.request({
-      url: 'http://localhost:8888/products/' + options.creator + '/' + options.id,
+      url: 'https://qzw.flhome.cn/products/' + options.creator + '/' + options.id,
       header: {
         'content-type': 'application/json'
       },
