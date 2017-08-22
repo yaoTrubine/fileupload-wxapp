@@ -1,8 +1,12 @@
-<view class="title">
-  <text>{{product.title}}</text>
+<view class="article">
+  <view class="title">
+    <text>{{product.title}}</text>
+  </view>
+
+  <view class="description">
+    <rich-text nodes="{{nodes}}"/>
+  </view>
+  
 </view>
 
-<view class="description">
-  <text>{{product.description}}</text>
-</view>
 

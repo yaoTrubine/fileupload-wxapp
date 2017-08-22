@@ -21,6 +21,6 @@ app.use(express.static(path.join(__dirname, '/angular')));
 
 routes(app);
 
-app.listen(3000, function(){
-	console.log('Listening at 3000');
+app.listen(8888, function(){
+	console.log('Listening at 8888');
 });

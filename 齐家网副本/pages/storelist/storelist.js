@@ -14,7 +14,7 @@ Page({
     var that = this;
     console.log(options);
     wx.request({
-      url: 'http://localhost:3000/products/' + options.creator + '/' + options.id,
+      url: 'http://localhost:8888/products/' + options.creator + '/' + options.id,
       header: {
         'content-type': 'application/json'
       },
@@ -22,6 +22,7 @@ Page({
         console.log(res.data);
         that.setData({
           'product': res.data[0],
+          nodes: res.data[0].description
         })
       }
     })

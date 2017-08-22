@@ -1,0 +1,13 @@
+.article{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 30rpx;
+}
+.title{
+  font-size: 40rpx;
+  text-align: center;
+}
+.description{
+  margin: 30rpx auto;
+}

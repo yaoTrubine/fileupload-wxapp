@@ -1,6 +1,6 @@
 <template name='good'>
 	<view class='good' bindtap='goodDetail' data-id="{{good._id}}">
-		<image src="http://localhost:3000/images/{{good.images}}" mode="aspectFill"></image>
+		<image src="http://localhost:8888/images/{{good.images}}" mode="aspectFill"></image>
     <view class='title'>
 			<text>{{good.title}}</text>
 		</view>

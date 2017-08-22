@@ -38,7 +38,7 @@ Page({
     var that = this;
     var data = [];
     wx.request({
-      url: 'http://localhost:3000/companys',
+      url: 'http://localhost:8888/companys',
       
       header: {
         'content-type': 'application/json'

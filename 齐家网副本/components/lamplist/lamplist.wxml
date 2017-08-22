@@ -1,5 +1,5 @@
 <template name="lamplist">
   <view class="value">
-      <image src="http://localhost:3000/images/{{value.image}}"  mode="aspectFill"></image>
+      <image src="http://localhost:8888/images/{{value.image}}"  mode="aspectFill"></image>
   </view>
 </template>
