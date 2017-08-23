@@ -8,7 +8,7 @@
   </view>
   <view class="pic">
     <block wx:for="{{product.images}}" wx:for-item='image' wx:for-index="idx" wx:key='*this'> 
-      <image src="https://qzw.flhome.cn/images/products/{{image}}"></image>
+      <image src="https://qzw.flhome.cn/images/products/{{image}}" data-src="{{image}}" bindtap="imageTouch"></image>
     </block>
     <!-- <image src="https://qzw.flhome.cn/images/products/{{product.images}}"></image> -->
   </view>

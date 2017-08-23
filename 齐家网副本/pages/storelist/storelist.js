@@ -4,7 +4,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    product: ''
+    product: '',
+    imagesList : []
   },
 
   /**
@@ -20,12 +21,17 @@ Page({
       },
       success: function (res) {
         console.log(res.data);
+        
         that.setData({
           'product': res.data[0],
-          nodes: res.data[0].description
+          nodes: res.data[0].description,
+          imagesList: res.data[0].images.map(function(image){
+            return 'https://qzw.flhome.cn/images/products/'+image;
+          })
         })
       }
     })
+    
   },  
 
   /**
@@ -75,5 +81,16 @@ Page({
    */
   onShareAppMessage: function () {
     
+  },
+  imageTouch: function(e){
+    console.log(e);
+    console.log(this.data.imagesList);
+    // https://qzw.flhome.cn/images/products
+    
+    var current = e.target.dataset.src;
+    wx.previewImage({
+      current : current,
+      urls: this.data.imagesList
+    })
   }
 })

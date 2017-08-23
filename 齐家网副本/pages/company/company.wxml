@@ -1,1 +1,9 @@
 <!--company.wxml-->
+<import src="../../components/good/good.wxml"/>
+ <view class='goods'>
+
+  <block  wx:for="{{goods}}" wx:for-item='good' wx:for-index="idx" wx:key='*this'>
+    <template is="good" data="{{good:good}}"/>
+  </block>
+  
+  </view>

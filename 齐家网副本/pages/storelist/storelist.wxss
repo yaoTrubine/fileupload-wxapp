@@ -11,3 +11,7 @@
 .description{
   margin: 30rpx auto;
 }
+.pic{
+  justify-content: center;
+  text-align: center;
+}

@@ -59,10 +59,10 @@ Page({
     })
   },
   onShow: function(){
-    var that = this;
-    console.log(that.data.goods);
+    
   },
 
+  //4个按钮
   fucClick(event){
     const id = event.currentTarget.dataset.id;
     console.log(id);

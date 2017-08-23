@@ -1,1 +1,2 @@
 /* company.wxss */
+@import '../../components/good/good.wxss';
