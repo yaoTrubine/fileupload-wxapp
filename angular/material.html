@@ -1,0 +1,53 @@
+<!--上传入驻材料商-->
+<div class="container" ng-controller="materialController">
+    <h1>上传入驻材料商</h1>
+    <form ng-submit="submit()" enctype="multipart/form-data">
+      
+      <div class="form-group">
+        <label for="">材料商标题</label>
+        <input type="text" class="form-control" ng-model="material.title">
+      </div>
+      <div class="form-group">
+        <label for="">材料商类别</label>
+        <!--单文件-->
+        <select class="form-control" name="category" id="" 
+        ng-model="material.category">
+          <option>瓷砖类</option>
+          <option>橱柜类</option>
+          <option>室内用门类</option>
+          <option>防盗门窗类</option>
+          <option>乳胶漆类</option>
+          <option>窗帘类</option>
+          <option>定制柜体类</option>
+          <option>板材类</option>
+          <option>木地板类</option>
+          <option>灯饰类</option>
+          <option>墙纸地毯类</option>
+          <option>卫浴类</option>
+          <option>集成天花板类</option>
+          <option>五金类</option>
+          <option>硅藻泥类</option>
+          <option>大理石类</option>
+          <option>艺术玻璃类</option>
+          <option>马赛克类</option>
+          <option>软硬包类</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="">材料商logo和招牌(上传两张1.logo、2.招牌)</label>
+        <!--单文件-->
+        <input type="file" class="form-control" id="material-file" multiple="true" ng-model="material.file">
+      </div>
+      <div class="form-group">
+        <label for="">材料商简介</label>
+        <trix-editor angular-trix ng-model="material.description"></trix-editor>
+        <div>{{material.description}}</div>
+      </div>
+     
+      <div class="form-group">
+        <button class="btn btn-primary form-control">提交</button>
+        </div>
+    </form>
+
+  </div>
+  

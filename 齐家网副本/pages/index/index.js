@@ -51,7 +51,6 @@ Page({
         // that.setData({
         //   'goods': data
         // })
-        console.log(res.data);
         that.setData({
           'goods': res.data
         })
@@ -65,12 +64,19 @@ Page({
   //4个按钮
   fucClick(event){
     const id = event.currentTarget.dataset.id;
-    console.log(id);
+    // console.log(id);
     switch(id){
+      
       case '03':
         wx.navigateTo({
           url: '../company/company',
-        })
+        });
+        break;
+      case '04':
+        wx.navigateTo({
+          url: '../material/material',
+        });
+        break;
     }
     // wx.navigateTo({
     //   url: '../storelist/storelist',
@@ -79,7 +85,7 @@ Page({
   },
   goodDetail: function(e){
     var id = e.currentTarget.dataset.id;
-    console.log(e);
+    // console.log(e);
     wx.navigateTo({
       url: '../goods/goods?id='+id,                 
     })

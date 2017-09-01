@@ -4,7 +4,8 @@ var express = require('express'),
 	mongoose =require('mongoose'),
 	app = express();
 	mongoose.connect('mongodb://localhost/wxapp'),
-	require('./models/companys');
+	require('./models/companys'),
+	require('./models/material');
 
 app.use(function(req, res, next) { //allow cross origin requests
     res.setHeader("Access-Control-Allow-Methods", "POST, PUT, OPTIONS, DELETE, GET");

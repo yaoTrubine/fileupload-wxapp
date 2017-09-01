@@ -1,0 +1,30 @@
+<!--material.wxml-->
+<scroll-view class="vendor">
+
+<text>1.瓷砖类</text>
+
+<text>2.橱柜类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate2}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="http://localhost:8888/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
+<text>3.室内用门类</text>
+<text>4.防盗门窗类</text>
+<text>5.乳胶漆类</text>
+<text>6.窗帘类</text>
+<text>7.定制柜体类</text>
+<text>8.板材类</text>
+<text>9.木地板类</text>
+<text>10.灯饰类</text>
+<text>11.墙纸地毯类</text>
+<text>12.卫浴类</text>
+<text>13.集成天花板类</text>
+<text>14.五金类</text>
+<text>15.硅藻泥类</text>
+<text>16.大理石类</text>
+<text>17.艺术玻璃类</text>
+<text>18.马赛克类</text>
+<text>19.软硬包类</text>
+
+</scroll-view>

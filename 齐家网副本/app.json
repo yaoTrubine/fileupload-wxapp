@@ -1,4 +1,4 @@
-  {
+{
   "pages": [
     "pages/index/index",
     "pages/goods/goods",
@@ -6,9 +6,10 @@
     "pages/lamp/lamp",
     "pages/logs/logs",
     "pages/storelist/storelist",
-    
     "pages/company/company",
-    "pages/store/store"
+    "pages/store/store",
+    "pages/material/material",
+    "pages/materialDetail/materialDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

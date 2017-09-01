@@ -1,0 +1,4 @@
+/* materialDetail.wxss */
+.vendorDetail image{
+  width: 100%;
+}

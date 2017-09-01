@@ -5,4 +5,5 @@ module.exports = function(app){
 	app.use('/posts', require('./posts'));
 	app.use('/products', require('./products'));
 	app.use('/companys', require('./companys'));
+	app.use('/material', require('./material'));
 };
