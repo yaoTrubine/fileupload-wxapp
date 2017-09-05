@@ -8,9 +8,20 @@ var vendorSchema = new Schema({
     image : Array,
 });
 
-var venderProductSchema = new Schema({
-    name : String,
-    images : Object
+var vendorProductPicSchema = new Schema({
+    field : String,
+    productBy: {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : 'Vendor'
+    },
+    images : [{
+        pic : Array,
+        productBy: {
+            type : mongoose.Schema.Types.ObjectId,
+            ref : 'Vendor'
+        }
+    }]
 });
 
 mongoose.model('Vendor', vendorSchema);
+mongoose.model('VendorProductPic', vendorProductPicSchema);

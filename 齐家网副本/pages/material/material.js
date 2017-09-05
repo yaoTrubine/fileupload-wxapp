@@ -179,9 +179,10 @@ Page({
   },
   vendorDetail(e){
     console.log(e);
-    var id = e.currentTarget.dataset.id;
+    var id = e.currentTarget.dataset.id,
+      name = e.currentTarget.dataset.name;
     wx.navigateTo({
-      url: '../materialDetail/materialDetail?id='+id,
+      url: '../materialDetail/materialDetail?id='+id+'&name='+name,
     })
   }
 })

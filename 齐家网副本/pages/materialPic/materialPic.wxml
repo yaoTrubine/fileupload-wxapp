@@ -1,0 +1,7 @@
+<!--materialPic.wxml-->
+<view class="materialPic">
+<block wx:for="{{images}}" wx:for-item='item' wx:key='item.id'>
+  <image src="http://localhost:8888/images/vendors/{{item}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+</block>
+
+</view>

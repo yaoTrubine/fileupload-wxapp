@@ -9,7 +9,8 @@
     "pages/company/company",
     "pages/store/store",
     "pages/material/material",
-    "pages/materialDetail/materialDetail"
+    "pages/materialDetail/materialDetail",
+    "pages/materialPic/materialPic"
   ],
   "window": {
     "backgroundTextStyle": "light",

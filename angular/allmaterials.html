@@ -1,0 +1,32 @@
+    <div class="container" ng-controller="allmaterialsController">
+        <ul id="post">
+            <li ng-repeat="post in items" class="jumbotron clearfix">
+                <div class="jumbotron clearfix">
+                        <dl>
+                        <dt>标题：{{post.name}}</dt>
+                        <dt>图片：
+                            <img ng-src="http://localhost:8888/images/vendors/{{post.image[0]}}" alt="">
+                        </dt>
+                    </dl>
+                    <dl>
+                        <dt><a href="" ng-click="delete(post)">删除</a></dt>
+                    </dl>
+                </div>
+            </li>
+            <nav>
+                <ul class="pagination">
+                    <li>
+                        <a ng-click="Previous()"><span>上一页</span>
+                        </a>
+                    </li>
+                        <li ng-repeat="page in pageList" ng-class="{active: isActivePage(page)}"><a ng-click="selectPage(page)">{{page}}</a>
+                    </li>
+                    <li><a ng-click="Next()">
+                        <span>下一页</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </ul>
+
+    </div>

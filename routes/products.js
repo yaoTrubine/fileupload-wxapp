@@ -9,9 +9,9 @@ var router = require('express').Router(),
 
 router.route('/')
       .get(function(req, res){
-        //   Product.findOne({title: 'asd'}).populate('_creator').exec(function(err, result){
-        //     res.send(result._creator.title);
-        //   })
+          Product.find({}).exec(function(err, result){
+              res.json(result);
+          })
         });
 
 // 创建商品

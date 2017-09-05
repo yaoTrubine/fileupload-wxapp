@@ -5,28 +5,76 @@ Page({
    * 页面的初始数据
    */
   data: {
-    image : ''
+    name : '',
+    image : '',
+    id : '',
+    defaultImage: 'http://localhost:8888/images/vendors/'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this;
     console.log(options);
+    let that = this;
+    that.data.name = options.name;
+    let material_1 = [], material_2 = [], material_3 = [],
+    material_4 = [], material_5 = [], material_6 = [];
+    // console.log(options);
     wx.request({
-      url: 'http://localhost:8888/material/'+options.id,
+      url: 'http://localhost:8888/material/'+options.name,
       header : {
         'content-type': 'application/json'
       },
       success: function(res){
-        console.log(res.data);
+        // console.log(res.data);
         that.setData({
-          'image': 'http://localhost:8888/images/vendors/'+res.data.image[1],
+
+          'image': 'http://localhost:8888/images/vendors/'+res.data[0].image[1],
           'vendorDetail' : res.data,
-          'nodes': res.data.description
+          'nodes': res.data[0].description
         })
         
+      }
+    });
+    wx.request({
+      url: 'http://localhost:8888/material/'+ options.name +'/'+ options.id,
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function(res){
+        res.data.map(function(r){
+          switch(r.field){
+            case 'firstCategory':
+              material_1.push(r);
+              break;
+            case 'secondCategory':
+              material_2.push(r);
+              break;
+            case 'thirdCategory':
+              material_3.push(r);
+              break;
+            case 'fourthCategory':
+              material_4.push(r);
+              break;
+            case 'fifthCategory':
+              material_5.push(r);
+              break;
+            case 'sixthCategory':
+              material_6.push(r);
+              break;
+          }
+        })
+
+        // console.log(res.data);
+        that.setData({
+          'material_1': material_1,
+          'material_2': material_2,
+          'material_3': material_3,
+          'material_4': material_4,
+          'material_5': material_5,
+          'material_6': material_6,
+        })
       }
     })
   },
@@ -78,5 +126,16 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  vendorDetail(e){
+    console.log(e);
+    let that = this;
+    let vendor = that.data.name;
+    let productBy = e.currentTarget.dataset.id;
+    let name = e.currentTarget.dataset.name;
+    wx.navigateTo({
+      url: '../materialPic/materialPic?name='+vendor+'&productby='+productBy+'&field='+name,
+      
+    })
   }
 })

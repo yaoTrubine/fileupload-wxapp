@@ -3,4 +3,25 @@
   <image src="{{image}}"></image>
   <rich-text nodes="{{nodes}}"/>  
 
+
+  <view class="vendorMaterial">
+    <view class="material_item" wx:if="{{material_1 != []}}">
+       <image src="{{defaultImage + material_1[0].images[0].pic[0]}}" data-id="{{material_1[0].productBy}}" data-name="{{material_1[0].field}}" bindtap="vendorDetail"></image>
+    </view>
+    <view class="material_item" wx:if="{{material_2 != []}}">
+       <image src="{{defaultImage + material_2[0].images[0].pic[0]}}" data-id="{{material_2[0].productBy}}" data-name="{{material_2[0].field}}" bindtap="vendorDetail"></image>
+    </view>
+    <view class="material_item" wx:if="{{material_3 != []}}">
+       <image src="{{defaultImage + material_3[0].images[0].pic[0]}}" data-id="{{material_3[0].productBy}}" data-name="{{material_3[0].field}}" bindtap="vendorDetail"></image>
+    </view>
+    <view class="material_item" wx:if="{{material_4 != []}}">
+       <image src="{{defaultImage + material_4[0].images[0].pic[0]}}" data-id="{{material_4[0].productBy}}" data-name="{{material_4[0].field}}" bindtap="vendorDetail"></image>
+    </view>
+    <view class="material_item" wx:if="{{material_5 != []}}">
+       <image src="{{defaultImage + material_5[0].images[0].pic[0]}}" data-id="{{material_5[0].productBy}}" data-name="{{material_5[0].field}}" bindtap="vendorDetail"></image>
+    </view>
+    <view class="material_item" wx:if="{{material_6 != []}}">
+       <image src="{{defaultImage + material_6[0].images[0].pic[0]}}" data-id="{{material_6[0].productBy}}" data-name="{{material_6[0].field}}" bindtap="vendorDetail"></image>
+    </view>
+  </view>
 </scroll-view>

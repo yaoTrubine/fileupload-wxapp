@@ -2,3 +2,19 @@
 .vendorDetail image{
   width: 100%;
 }
+
+.vendorMaterial{
+  padding-top: 100rpx;
+  display: flex;
+  flex-direction: row;
+  float: left;
+  padding-right: 20rpx;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.vendorMaterial image{
+  width: 220rpx;
+  height: 220rpx;
+  padding: 10rpx;
+}
+
