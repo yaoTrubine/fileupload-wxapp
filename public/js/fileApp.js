@@ -165,7 +165,7 @@ app.controller('materialController',function($scope,Upload,$http,$timeout){
 app.controller('allmaterialsController',['$scope','$resource','$http',function($scope,$resource,$http){
     var Posts = $resource('http://localhost:8888/material');
     Posts.query(function(posts){
-        console.log(posts);
+        // console.log(posts);
         $scope.posts = posts;
         
         $scope.pageSize = 4;

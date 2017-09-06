@@ -28,3 +28,23 @@ form .progress {
     background: orange;
     width: 0;
 }
+
+#post{
+    list-style: none;
+}
+
+.panel dl{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#post img{
+    width: 50px;
+    height: 50px;
+}
+
+nav{
+    text-align: center;
+}
