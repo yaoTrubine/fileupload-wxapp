@@ -8,7 +8,7 @@ Page({
     name : '',
     image : '',
     id : '',
-    defaultImage: 'http://localhost:8888/images/vendors/'
+    defaultImage: 'https://qzw.flhome.cn/images/vendors/'
   },
 
   /**
@@ -22,23 +22,23 @@ Page({
     material_4 = [], material_5 = [], material_6 = [];
     // console.log(options);
     wx.request({
-      url: 'http://localhost:8888/material/'+options.name,
+      url: 'https://qzw.flhome.cn/material/'+options.name,
       header : {
         'content-type': 'application/json'
       },
       success: function(res){
-        // console.log(res.data);
+        console.log(res.data);
         that.setData({
 
-          'image': 'http://localhost:8888/images/vendors/'+res.data[0].image[1],
-          'vendorDetail' : res.data,
+          'image': 'https://qzw.flhome.cn/images/vendors/'+res.data[0].image[0],
+          'name': res.data[0].name,
           'nodes': res.data[0].description
         })
         
       }
     });
     wx.request({
-      url: 'http://localhost:8888/material/'+ options.name +'/'+ options.id,
+      url: 'https://qzw.flhome.cn/material/'+ options.name +'/'+ options.id,
       header: {
         'content-type': 'application/json'
       },

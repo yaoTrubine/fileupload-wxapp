@@ -3,7 +3,8 @@
             <li ng-repeat="post in items" class="panel panel-default clearfix">
                 <div class="panel-body clearfix">
                     <dl>
-                        <dt>标题：{{post.name}}</dt>
+                        <dt>标题: {{post.name}}</dt>
+                        <dt>分类: {{post.catergory}}</dt>
                         <dt>Logo：
                             <img ng-src="http://localhost:8888/images/vendors/{{post.image[0]}}" alt="">
                         </dt>

@@ -1,6 +1,6 @@
 <import src="../../components/good/good.wxml"/>
 <!--index.wxml-->
-<scroll-view class='scroller' style="width:{{width}}px;height:{{height}}px;" scroll-y="true" lower-threshold="800" bindscrolltolower="loadmore">
+<view class='scroller' style="width:{{width}}px;height:{{height}}px;" scroll-y="true" lower-threshold="800" bindscrolltolower="loadmore">
   <swiper class='banners' indicator-dots="true" autoplay="true" interval="4000" duration="1000" indicator-color="#60ffffff" indicator-active-color="#fff">
     <block wx:for="{{banner}}" wx:key="*this">
       <swiper-item>
@@ -26,5 +26,5 @@
   </view>
   </view>
 
-</scroll-view>
+</view>
 

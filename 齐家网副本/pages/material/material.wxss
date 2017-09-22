@@ -10,7 +10,7 @@
 .vendor image{
   width: 200rpx;
   height: 200rpx;
-  padding-left: 10rpx;
+  padding: 0 15rpx 15rpx 0;
 }
 
 .vendor text{
@@ -21,7 +21,10 @@
   padding: 10rpx 0;
 }
 .vendorObj{
+  padding: 10rpx 0;
   display: flex;
   flex-direction: row;
-  width: 600rpx;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }

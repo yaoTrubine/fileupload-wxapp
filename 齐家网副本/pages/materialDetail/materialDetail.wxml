@@ -1,6 +1,7 @@
 <!--materialDetail.wxml-->
 <scroll-view class="vendorDetail">
   <image src="{{image}}"></image>
+  <text class="name">{{name}}</text>
   <rich-text nodes="{{nodes}}"/>  
 
 

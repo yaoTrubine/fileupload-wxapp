@@ -3,13 +3,12 @@
 .materialPic{
   margin: 0 auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
 }
 
 .materialPic image{
+  
   width: 220rpx;
-  padding-left: 10rpx;
+  padding: 10rpx;
   height: 220rpx;
 }

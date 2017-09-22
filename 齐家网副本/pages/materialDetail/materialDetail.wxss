@@ -16,5 +16,10 @@
   width: 220rpx;
   height: 220rpx;
   padding: 10rpx;
+  display: block;
 }
 
+.name{
+  font-size: 70rpx;
+  padding: 20rpx 0;
+}

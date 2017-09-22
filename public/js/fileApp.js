@@ -154,9 +154,9 @@ app.controller('materialController',function($scope,Upload,$http,$timeout){
                 'Content-Type': undefined
             }
         }).then(function success(){
-            $("#notice").html( "<span class='green'>success!!</span>" );
-        },function error(){
-
+            console.log({"message": "success"});
+        },function error(err){
+            console.error("error");
         })
     }
 });
@@ -219,11 +219,11 @@ app.controller('allmaterialsController',['$scope','$resource','$http',function($
             $http({
                 method : 'DELETE',
                 url :'/material/' + post._id
-            }).then(function successCallback(){
-                
-            },function errorCallback(err){
-                if(err) throw err;
-            });
+            }).then(function success(){
+                console.log({"message": "success"});
+            },function error(err){
+                console.error(err);
+            })
         }
     });
 }]);

@@ -1,36 +1,135 @@
 <!--material.wxml-->
 <scroll-view class="vendor">
 
-<text>1.瓷砖类</text>
+<text>瓷砖类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate1}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
 
-
-<text>2.橱柜类</text>
+<text>橱柜类</text>
 <view class="vendorObj">
   <block wx:for="{{cate2}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
-    <image src="http://localhost:8888/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
   </block>
 </view>
-<text>3.室内用门类</text>
-<text>4.防盗门窗类</text>
-<text>5.乳胶漆类</text>
-<text>6.窗帘类</text>
-<text>7.定制柜体类</text>
-<text>8.板材类</text>
-<text>9.木地板类</text>
-<text>10.灯饰类</text>
-<text>11.墙纸地毯类</text>
-<text>12.卫浴类</text>
-<text>13.集成天花板类</text>
-<text>14.五金类</text>
-<text>15.硅藻泥类</text>
-<text>16.大理石类</text>
-<text>17.艺术玻璃类</text>
-<text>18.马赛克类</text>
+<text>室内用门类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate3}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
+
+<text>防盗门窗类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate4}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
+
+<text>乳胶漆类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate5}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
+
+<text>窗帘类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate6}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
+
+<text>定制柜体类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate7}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
+
+<text>板材类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate8}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
+
+<text>木地板类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate9}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
+
+<text>灯饰类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate10}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
+
+<text>墙纸地毯类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate11}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
+
+<text>卫浴类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate12}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
+
+<text>集成天花板类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate13}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
+
+<text>五金类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate14}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
+
+<text>硅藻泥类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate15}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
+
+<text>大理石类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate16}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
+
+<text>艺术玻璃类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate17}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
+
+<text>马赛克类</text>
 <view class="vendorObj">
   <block wx:for="{{cate18}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
-    <image src="http://localhost:8888/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
   </block>
 </view>
-<text>19.软硬包类</text>
 
+<text>软硬包类</text>
+<view class="vendorObj">
+  <block wx:for="{{cate19}}" wx:for-item='item' wx:key='item.id' bindtap='fucClick'>
+    <image src="https://qzw.flhome.cn/images/vendors/{{item.image[0]}}" data-id="{{item._id}}" data-name="{{item.name}}" bindtap="vendorDetail"></image>
+  </block>
+</view>
 </scroll-view>

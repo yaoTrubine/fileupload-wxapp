@@ -5,18 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    imagesList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
+    // console.log(options);
     let that = this;
     let images = [];
     wx.request({
-      url: 'http://localhost:8888/material/'+ options.name +'/'+ options.productby +'/'+ options.field,
+      url: 'https://qzw.flhome.cn/material/'+ options.name +'/'+ options.productby +'/'+ options.field,
       header: {
         'content-type': 'application/json'
       },
@@ -25,8 +25,16 @@ Page({
         res.data.map(function(r){
           images.push(r.images[0].pic[0]);
         })
+        console.log(images);
         that.setData({
-          'images': images
+          'images': images,
+          imagesList: images.map( img => {
+            return 'https://qzw.flhome.cn/images/vendors/' + img;
+          })
+          // imagesList: res.data.map(function (image) {
+          //   let fileName = image.imags[0].pic[0];
+          //   return 'https://qzw.flhome.cn/images/vendors/' + fileName;
+          // })
         })
       }
     })
@@ -79,5 +87,13 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  vendorDetail: function(e){
+    console.log(e);
+    var current = e.target.dataset.src;
+    wx.previewImage({
+      current: current,
+      urls: this.data.imagesList
+    })
   }
 })

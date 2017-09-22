@@ -1,6 +1,6 @@
 var router = require('express').Router();
 var multer = require('multer'),
-    upload = multer({dest : './uploads/'}),
+    upload = multer({dest : './uploads/',limits:{fileSize:20000000}}),
     mongoose = require('mongoose'),
     Vendor = mongoose.model('Vendor'),
     fs = require('fs'),
@@ -10,6 +10,7 @@ var multer = require('multer'),
 router.route('/create')
       .post(upload.any(),function(req,res){
          let logoFile = [];
+         console.log(req.body);
           req.files.forEach(function(file){
             if(file.fieldname === 'vendor'){
               logoFile.push(file.originalname);    

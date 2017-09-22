@@ -20,7 +20,7 @@ Page({
         cate17=[], cate18=[], cate19=[];
 
     wx.request({
-      url: 'http://localhost:8888/material',
+      url: 'https://qzw.flhome.cn/material',
       header : {
         'content-type': 'application/json'
       },
